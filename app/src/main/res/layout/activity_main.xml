@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/CardView"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/sosOff"
+        android:layout_width="208dp"
+        android:layout_height="123dp"
+
+        android:layout_marginBottom="37dp"
+        android:background="@drawable/round_button"
+        android:text="STOP SOS"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonsubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/buttonsubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="26dp"
+        android:text="Add Contacts"
+        app:layout_constraintBottom_toTopOf="@+id/sendmsg"
+        app:layout_constraintEnd_toEndOf="@+id/sosOff"
+        app:layout_constraintTop_toBottomOf="@+id/sosOff" />
+
+    <Button
+        android:id="@+id/sendmsg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="246dp"
+        android:text="send emergency message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonsubmit" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginBottom="26dp"
+        android:text="Stop Services "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/sosOff"
+        app:layout_constraintStart_toStartOf="@+id/sosOff"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
