@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -36,21 +35,16 @@ public class AddContacts extends AppCompatActivity {
         editText2=(EditText)findViewById(R.id.editText2);
         editText3=(EditText)findViewById(R.id.editText3);
         SharedPreferences sharedpreferences = getSharedPreferences(MyPREFERENCES,Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        submitBotton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                first=editText1.getText().toString();
-                second=editText2.getText().toString();
-                third=editText3.getText().toString();
-                SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.putString(phonenumber1,first);
-                editor.putString(phonenumber2,second);
-                editor.putString(phonenumber3,third);
-                editor.commit();
-                Toast.makeText(getApplicationContext(),"submit succesful",Toast.LENGTH_SHORT).show();
-            }
+        submitBotton.setOnClickListener(v -> {
+            first=editText1.getText().toString();
+            second=editText2.getText().toString();
+            third=editText3.getText().toString();
+            SharedPreferences.Editor editor1 = sharedpreferences.edit();
+            editor1.putString(phonenumber1,first);
+            editor1.putString(phonenumber2,second);
+            editor1.putString(phonenumber3,third);
+            editor1.apply();
+            Toast.makeText(getApplicationContext(),"submit succesful",Toast.LENGTH_SHORT).show();
         });
 
 
