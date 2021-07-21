@@ -55,6 +55,13 @@ public class LockService extends Service {
         registerReceiver(receiver, filter);
     }
 
+       @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(receiver);
+        stopForeground(true);
+    }
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
