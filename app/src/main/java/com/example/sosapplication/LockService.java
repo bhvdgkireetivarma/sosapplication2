@@ -52,7 +52,6 @@ public class LockService extends Service {
         final IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_USER_PRESENT);
-ScreenReceiver mReceiver=new ScreenReceiver();
         registerReceiver(receiver, filter);
     }
 
@@ -103,7 +102,8 @@ Intent intent1=new Intent(this,MainActivity.class);
                                     SharedPreferences prefs =this.getSharedPreferences(MyPREFERENCES,Context.MODE_PRIVATE);
                                     phoneNo =new String[3];
                                     phoneNo[0]=prefs.getString(phoneNumber1," ");
-
+                                    phoneNo[1]=prefs.getString(phoneNumber2," ");
+                                    phoneNo[2]=prefs.getString(phoneNumber3," ");
                                     addresses = geocoder.getFromLocation(latitude, longitude, 1);
                                     String address = addresses.get(0).getAddressLine(0);
                                     String area = addresses.get(0).getLocality();
