@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent=new Intent(this,LockService.class);
+
         boolean hasPermissionWrite = (ContextCompat.checkSelfPermission(getApplicationContext(),
                 Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED);
         if (!hasPermissionWrite) {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     MY_LOCATION);
         }
-
+        Intent intent=new Intent(this,LockService.class);
 
         startForegroundService(intent);
         stopBtn=(Button) findViewById(R.id.sosOff);
